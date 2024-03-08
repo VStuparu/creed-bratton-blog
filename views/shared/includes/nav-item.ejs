@@ -1,0 +1,35 @@
+<div class="side">
+    <ul class="nav-items">
+        <li><a href="/">All Posts</a></li>
+        <% if (!locals.isAdmin) { %>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <% } %>
+                <% if(locals.isAdmin) { %>
+                    <li><a href="/admin/posts/new">Add Post</a></li>
+                    <% } %>
+    </ul>
+</div>
+<div id="logo">
+    <a href="/">
+        <!-- <h2>c b</h2> -->
+        <div>
+            <span id="logo-left">c</span> <span id="logo-right">b</span>
+        </div>
+
+        <p>creed <span id="bratton">bratton </span> </p>
+    </a>
+</div>
+<div class="side">
+    <ul class="nav-items">
+        <% if(!locals.isAuth) { %>
+            <li class="nav-btn"><a href="/login">Login</a></li>
+            <li class="nav-btn"><a href="/signup">Signup</a></li>
+            <% } %>
+                <% if(locals.isAuth) { %>
+                    <form id="form-logout-btn" action="/logout" method="POST">
+                        <button class="btn">Logout</button>
+                    </form>
+                    <% } %>
+    </ul>
+</div>

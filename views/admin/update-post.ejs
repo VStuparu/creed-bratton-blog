@@ -1,0 +1,15 @@
+<%- include('../shared/includes/head', {pageTitle: 'Edit Post' }) %>
+    <link rel="stylesheet" href="/styles/auth.css">
+    <link rel="stylesheet" href="/styles/forms.css">
+    </head>
+
+    <body>
+        <%- include('../shared/includes/header') %>
+            <main>
+
+                <section>
+                    <%- include('includes/post-form', {submitPath: '/admin/posts/' + post.id , post: post,
+                        imageRequired: false}) %>
+                </section>
+            </main>
+            <%- include('../shared/includes/footer') %>

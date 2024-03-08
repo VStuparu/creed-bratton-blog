@@ -1,0 +1,30 @@
+<%- include('../shared/includes/head', {pageTitle: 'All Posts' }) %>
+    <link rel="stylesheet" href="/styles/auth.css">
+    <link rel="stylesheet" href="/styles/forms.css">
+    <link rel="stylesheet" href="/styles/posts.css">
+    <script src="/scripts/posts-management.js" defer></script>
+    </head>
+
+    <body>
+        <%- include('../shared/includes/header') %>
+            <main>
+                <ul>
+                    <% for(const post of posts) { %>
+                        <li>
+                            <%- include('../shared/includes/post-item', {post: post}) %>
+                        </li>
+                        <% } %>
+                </ul>
+
+            </main>
+
+            <footer class="main-footer">
+                <a href="https://www.facebook.com/creed.bratton.982/" target="_blank">
+                    <img src="/assets/facebook.png" alt="facebook">
+                </a>
+                <a href="https://www.instagram.com/creedbratton/" target="_blank">
+                    <img src="/assets/instagram.png" alt="instagram">
+                </a>
+
+            </footer>
+            <% include('../shared/includes/footer') %>

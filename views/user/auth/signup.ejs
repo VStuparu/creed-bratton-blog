@@ -1,0 +1,49 @@
+<%- include('../../shared/includes/head', {pageTitle: 'Signup' }) %>
+    <link rel="stylesheet" href="/styles/auth.css">
+    <link rel="stylesheet" href="/styles/forms.css">
+    </head>
+
+    <body>
+        <%- include('../../shared/includes/header') %>
+            <main>
+                <% if(inputData.errorMessage) { %>
+                    <section class="alert">
+                        <h2>Invalid input!</h2>
+                        <p>
+                            <%= inputData.errorMessage %>
+                        </p>
+                    </section>
+                    <% } %>
+                        <h1>Create new account</h1>
+                        <form action="/signup" method="POST">
+                            <p>
+                                <label for="email">Email</label>
+                                <input type="email" name="email" id="email" required>
+                            </p>
+                            <p>
+                                <label for="confirm-email">Confirm Email</label>
+                                <input type="email" name="confirm-email" id="confirm-email" required>
+                            </p>
+                            <p>
+                                <label for="password">Password</label>
+                                <input type="password" name="password" id="password" minlength="6" required>
+                            </p>
+                            <p>
+                                <label for="fullname">How Should We Call You?</label>
+                                <input type="text" name="fullname" id="fullname" required>
+                            </p>
+                            <button class="btn">Create Account</button>
+                            <a href="/login" class="btn-alt">Log in instead</a>
+                        </form>
+            </main>
+
+            <footer class="main-footer">
+                <a href="https://www.facebook.com/creed.bratton.982/" target="_blank">
+                    <img src="/assets/facebook.png" alt="facebook">
+                </a>
+                <a href="https://www.instagram.com/creedbratton/" target="_blank">
+                    <img src="/assets/instagram.png" alt="instagram">
+                </a>
+
+            </footer>
+            <% include('../../shared/includes/footer') %>

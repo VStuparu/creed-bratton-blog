@@ -1,0 +1,33 @@
+<%- include('../../shared/includes/head', {pageTitle: post.title }) %>
+    <link rel="stylesheet" href="/styles/auth.css">
+    <link rel="stylesheet" href="/styles/forms.css">
+    <link rel="stylesheet" href="/styles/posts.css">
+    </head>
+
+    <body>
+        <%- include('../../shared/includes/header') %>
+            <main class="post-details">
+                <h1>
+                    <%= post.title %>
+                </h1>
+                <p class="post-summary">
+                    <%= post.summary %>
+                </p>
+                <div class="post-image">
+                    <img src="<%= post.imageUrl %>" alt="<%= post.title %>">
+                </div>
+                <div class="post-content">
+                    <%= post.content %>
+                </div>
+            </main>
+
+            <footer class="main-footer">
+                <a href="https://www.facebook.com/creed.bratton.982/" target="_blank">
+                    <img src="/assets/facebook.png" alt="facebook">
+                </a>
+                <a href="https://www.instagram.com/creedbratton/" target="_blank">
+                    <img src="/assets/instagram.png" alt="instagram">
+                </a>
+
+            </footer>
+            <% include('../../shared/includes/footer') %>

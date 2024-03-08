@@ -1,0 +1,21 @@
+<div class="post-item-preview">
+    <div class="text-preview">
+        <h1>
+            <%= post.title %>
+        </h1>
+        <p class="summary-preview">
+            <%= post.summary %>
+        </p>
+        <div class="buttons">
+            <a href="/posts/<%= post.id %>" class="btn">Read more</a>
+            <% if(locals.isAdmin) { %>
+                <a href="/admin/posts/<%= post.id %>" class="btn">View and edit</a>
+                <button class="btn" data-postid="<%= post.id %>">Delete</button>
+                <% } %>
+        </div>
+
+    </div>
+    <div class="preview-image">
+        <img src="<%= post.imageUrl  %>" alt="<%= post.title %>">
+    </div>
+</div>

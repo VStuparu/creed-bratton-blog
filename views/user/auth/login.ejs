@@ -1,0 +1,41 @@
+<%- include('../../shared/includes/head', {pageTitle: 'Login' }) %>
+    <link rel="stylesheet" href="/styles/auth.css">
+    <link rel="stylesheet" href="/styles/forms.css">
+    </head>
+
+    <body>
+        <%- include('../../shared/includes/header') %>
+            <main>
+                <h1>Log in to your account</h1>
+                <% if(inputData.errorMessage) {%>
+                    <section class="alert">
+                        <h2>Invalid Credentials</h2>
+                        <p>
+                            <%= inputData.errorMessage %>
+                        </p>
+                    </section>
+                    <% } %>
+                        <form action="/login" method="POST">
+                            <p>
+                                <label for="email">Email</label>
+                                <input type="email" name="email" id="email" required>
+                            </p>
+                            <p>
+                                <label for="password">Password</label>
+                                <input type="password" name="password" id="password" required>
+                            </p>
+                            <button class="btn">Login</button>
+                            <a href="/signup" class="btn-alt">Signup instead</a>
+                        </form>
+            </main>
+
+            <footer class="main-footer">
+                <a href="https://www.facebook.com/creed.bratton.982/" target="_blank">
+                    <img src="/assets/facebook.png" alt="facebook">
+                </a>
+                <a href="https://www.instagram.com/creedbratton/" target="_blank">
+                    <img src="/assets/instagram.png" alt="instagram">
+                </a>
+
+            </footer>
+            <% include('../../shared/includes/footer') %>
